@@ -1,10 +1,10 @@
 {
   "name": "send-email",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "API to send email's in NodeJs using queues.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch --noStackTrace --runInBand",
+    "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
     "@types/jest": "^29.4.0",
     "@types/node": "^18.14.0",
     "jest": "^29.4.3",
+    "ts-jest": "^29.0.5",
     "typescript": "^4.9.5"
   }
 }
