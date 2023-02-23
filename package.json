@@ -1,7 +1,7 @@
 {
   "name": "send-email",
   "version": "1.0.0",
-  "description": "API to send email's in NodeJs using queues.",
+  "description": "API to send emails in NodeJs using queues.",
   "scripts": {
     "test": "jest --watch --noStackTrace --runInBand",
     "test:ci": "npm test -- --coverage"
