@@ -1,6 +1,5 @@
-import { User } from "../models/user";
-import { UserAccount } from "../models/user-account";
+import { User, UserAccount } from "../models";
 
 export interface CreateAccount {
-  request(user: UserAccount): Promise<User>
+  create(user: UserAccount): Promise<User>
 }
