@@ -1,5 +1,5 @@
 import { User, UserAccount } from "../../../domain/models"
-import { CreateAccountRepository, Encrypter, Queue } from "../../protocols"
+import { CreateAccountRepository, Encrypter, QueueInterface } from "../../protocols"
 import { DbCreateAccount } from "./db-create-account"
 
 const makeUser = (): User => ({
@@ -13,8 +13,8 @@ const makeUserAccount = (): UserAccount => ({
   password: "valid_password"
 })
 
-const makeQueue = (): Queue => {
-  class QueueStub implements Queue {
+const makeQueue = (): QueueInterface => {
+  class QueueStub implements QueueInterface {
     add(jobName: string, data: { user: User }): Promise<void> {
       return new Promise(resolve => resolve());
     }
@@ -47,7 +47,7 @@ interface SutTypes {
   sut: DbCreateAccount
   encrypterStub: Encrypter
   createAccountRepositoryStub: CreateAccountRepository
-  queueStub: Queue
+  queueStub: QueueInterface
 }
 
 const makeSut = (): SutTypes => {

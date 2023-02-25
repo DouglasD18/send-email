@@ -5,8 +5,8 @@ const mail = nodemailer.createTransport(nodemailerConfig);
 
 export default {
   key: "SendEmail", 
-  async handle({ data }) {
-    const { user: { name, email } } = data;
+  async handle({ user }) {
+    const { name, email } = user;
 
     await mail.sendMail({
       from: 'Queue Test <queue@mail.com.br>',
