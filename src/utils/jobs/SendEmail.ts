@@ -1,5 +1,14 @@
 import nodemailer from "nodemailer";
-import nodemailerConfig from "../nodemailer/config";
+import env from "../../main/config/env";
+
+const nodemailerConfig = {
+  host: env.mail_host,
+  port: env.mail_port,
+  auth: {
+    user: env.mail_user,
+    pass: env.mail_pass
+  }
+}
 
 const mail = nodemailer.createTransport(nodemailerConfig);
 
