@@ -4,6 +4,8 @@
   "description": "API to send emails in NodeJs using queues.",
   "scripts": {
     "test": "jest --watch --noStackTrace --runInBand",
+    "test:unit": "npm test -- --silent -c jest-unit-config.js",
+    "test:integration": "npm test -- --silent -c jest-integration-config.js",
     "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
